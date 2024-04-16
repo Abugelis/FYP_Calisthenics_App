@@ -1,0 +1,59 @@
+<resources>
+    <!--Client Id for google log in service -->
+    <string name="client_id">412886323614-mini7i9vi47itr443f1km2c7r0odf5ue.apps.googleusercontent.com</string>
+
+    <string name="app_name">FYP_Calisthenics_App</string>
+
+    <!-- Welcome Activity Strings -->
+    <string name="welcome_log_in_button">Log In</string>
+    <string name="welcome_register_button">Register</string>
+    <string name="welcome_app_name">Mobile Calisthenics App</string>
+
+    <!-- Sign Up activity strings -->
+    <string name="sign_up_activity_label">Sign Up</string>
+    <string name="sign_up_email_hint">Email</string>
+    <string name="sign_up_password_hint">Password</string>
+    <string name="sign_up_button">Sign Up</string>
+
+    <!-- Log In activity -->
+    <string name="log_in_label">Calisthenics Mobile App</string>
+    <string name="log_in_email">Email</string>
+    <string name="log_in_password">Password</string>
+    <string name="log_in_forgot_password_label">Forgot Password?</string>
+    <string name="log_in_sign_up_link">Sign Up</string>
+    <string name="log_in_sign_up_label">Don\'t have an account?</string>
+    <string name="log_in_button">Sign In</string>
+    <string name="google_sign_in_button">Sign In</string>
+
+    <!-- Main Menu activity strings -->
+    <string-array name="main_menu_text">
+        <item>Workout</item>
+        <item>Calorie Calculator</item>
+        <item>Log Your Meal</item>
+        <item>Water Intake</item>
+        <item>Steps Counter</item>
+        <item>Your Feedback</item>
+    </string-array>
+
+    <!-- Step Counter activity strings -->
+    <string name="steps_counter_title">Step Counter</string>
+    <string name="steps_label">Steps</string>
+    <string name="steps_input_hint_text">Enter Your Daily Steps Goal</string>
+    <string name="steps_display_value"> %d</string>
+    <string name="goal_prefix">Goal:</string>
+
+    <!-- Calorie Calculator activity strings -->
+    <string name="calorie_calculator_title">Calorie Calculator</string>
+    <string name="calorie_calculator_age">Age (15 – 80)</string>
+    <string name="calorie_calculator_height">Height ( cm )</string>
+    <string name="calorie_calculator_weight">Weight ( kg )</string>
+    <string name="calorie_calculator_button">Calculate</string>
+    <string-array name="calorie_calculator_activity_level">
+        <item>Little to no exercise</item>
+        <item>Exercise 1–3 days a week</item>
+        <item>Exercise 3–5 days a week</item>
+        <item>Exercise 6–7 days a week</item>
+        <item>Extra active/physically demanding work</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412886323614",
+    "project_id": "fyp-calisthenics-app",
+    "storage_bucket": "fyp-calisthenics-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412886323614:android:b8050e890525481b9d068f",
+        "android_client_info": {
+          "package_name": "com.example.fyp_calisthenics_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjT0Oss3FKY4A6Mz3SC5M5xmRnxEfUij4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
