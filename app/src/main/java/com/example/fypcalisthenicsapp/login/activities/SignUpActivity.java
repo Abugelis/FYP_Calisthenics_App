@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.login.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,12 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fypcalisthenicsapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     // Creating variables
     private EditText email;
@@ -37,7 +38,6 @@ public class SignUp extends AppCompatActivity {
         regBtn = findViewById(R.id.SignUpButton);
 
 
-
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,31 +45,29 @@ public class SignUp extends AppCompatActivity {
                 String userEmail = email.getText().toString();
                 String userPassword = password.getText().toString();
 
-                if(TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(userPassword)){
-                    Toast.makeText(SignUp.this, "Email or Password is empty", Toast.LENGTH_SHORT).show();
-                }
-                else if(userPassword.length() < 6){
-                    Toast.makeText(SignUp.this, "Password is too short", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (TextUtils.isEmpty(userEmail) || TextUtils.isEmpty(userPassword)) {
+                    Toast.makeText(SignUpActivity.this, "Email or Password is empty", Toast.LENGTH_SHORT).show();
+                } else if (userPassword.length() < 6) {
+                    Toast.makeText(SignUpActivity.this, "Password is too short", Toast.LENGTH_SHORT).show();
+                } else {
                     registerUser(userEmail, userPassword);
                 }
             }
         });
     }
+
     // Method for registering the user, takes email and password as arguments
     private void registerUser(String email, String password) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(
-                SignUp.this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(SignUp.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(SignUp.this, "Registration failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+                SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUpActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

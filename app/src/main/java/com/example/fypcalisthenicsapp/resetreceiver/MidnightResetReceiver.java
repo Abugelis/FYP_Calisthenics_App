@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.resetreceiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

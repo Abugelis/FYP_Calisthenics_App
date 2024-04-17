@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fyp_calisthenics_app"
+    namespace = "com.example.fypcalisthenicsapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.fyp_calisthenics_app"
+        applicationId = "com.example.fypcalisthenicsapp"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

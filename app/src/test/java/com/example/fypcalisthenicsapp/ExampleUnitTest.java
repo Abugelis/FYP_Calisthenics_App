@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp;
 
 import org.junit.Test;
 

@@ -1,16 +1,19 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.fypcalisthenicsapp.main.models.MainMenuModel;
+import com.example.fypcalisthenicsapp.main.recycleviews.MainRecyclerView;
+import com.example.fypcalisthenicsapp.R;
 
 import java.util.ArrayList;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     ArrayList<MainMenuModel> mainMenuModels = new ArrayList<>();
     int[] menuImages = {R.drawable.workout_menu, R.drawable.main_menu_test_2, R.drawable.menu_meal_log,
@@ -26,12 +29,12 @@ public class MainMenu extends AppCompatActivity {
 
         setUpMainMenuModels();
 
-        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, mainMenuModels);
+        MainRecyclerView adapter = new MainRecyclerView(this, mainMenuModels);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void setUpMainMenuModels(){
+    private void setUpMainMenuModels() {
         String[] menuOptions = getResources().getStringArray(R.array.main_menu_text);
 
         for (int i = 0; i < menuOptions.length; i++) {

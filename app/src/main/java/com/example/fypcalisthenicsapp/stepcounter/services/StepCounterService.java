@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.stepcounter.services;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,6 +14,8 @@ import android.hardware.SensorManager;
 import android.os.IBinder;
 
 import androidx.core.app.NotificationCompat;
+
+import com.example.fypcalisthenicsapp.R;
 
 // StepCounterService.java
 public class StepCounterService extends Service implements SensorEventListener {

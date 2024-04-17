@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.login.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Welcome extends AppCompatActivity {
+import com.example.fypcalisthenicsapp.R;
+
+// sita irgi pavadinima pakeisti gal main
+public class SignInActivity extends AppCompatActivity {
 
     private Button login;
     private Button signup;
@@ -23,14 +26,14 @@ public class Welcome extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Welcome.this, LogIn.class));
+                startActivity(new Intent(SignInActivity.this, LogInActivity.class));
             }
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Welcome.this, SignUp.class));
+                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
             }
         });
     }

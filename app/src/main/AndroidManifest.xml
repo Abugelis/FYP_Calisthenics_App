@@ -18,22 +18,22 @@
         android:theme="@style/Theme.FYP_Calisthenics_App"
         tools:targetApi="31">
         <activity
-            android:name=".CalorieCalculator"
+            android:name=".caloriecalculator.activities.CalorieCalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".StepsCounter"
+            android:name=".stepcounter.activities.StepCounterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainMenu"
+            android:name=".main.activities.MainMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".login.activities.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".login.activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".Welcome"
+            android:name=".login.activities.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity> <!-- Receiver -->
         <receiver
-            android:name=".MidnightResetReceiver"
+            android:name=".resetreceiver.MidnightResetReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>

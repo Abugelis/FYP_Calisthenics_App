@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.main.recycleviews;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,26 +11,32 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fypcalisthenicsapp.R;
+import com.example.fypcalisthenicsapp.caloriecalculator.activities.CalorieCalculatorActivity;
+import com.example.fypcalisthenicsapp.main.models.MainMenuModel;
+import com.example.fypcalisthenicsapp.stepcounter.activities.StepCounterActivity;
+
 import java.util.ArrayList;
 
-public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
+public class MainRecyclerView extends RecyclerView.Adapter<MainRecyclerView.MyViewHolder> {
     Context context;
     ArrayList<MainMenuModel> mainMenuModels;
-    public MyRecyclerViewAdapter(Context context, ArrayList<MainMenuModel> mainMenuModels){
+
+    public MainRecyclerView(Context context, ArrayList<MainMenuModel> mainMenuModels) {
         this.context = context;
         this.mainMenuModels = mainMenuModels;
     }
 
     @NonNull
     @Override
-    public MyRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainRecyclerView.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recyclerview_row, parent, false);
-        return new MyRecyclerViewAdapter.MyViewHolder(view);
+        return new MainRecyclerView.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MainRecyclerView.MyViewHolder holder, int position) {
         holder.menuImages.setImageResource(mainMenuModels.get(position).getMenuImage());
         holder.menuNames.setText(mainMenuModels.get(position).getMenuName());
 
@@ -45,12 +51,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                     switch (itemName) {
                         case "Steps Counter":
                             // Start StepCounterActivity
-                            Intent stepCounterIntent = new Intent(context, StepsCounter.class);
+                            Intent stepCounterIntent = new Intent(context, StepCounterActivity.class);
                             context.startActivity(stepCounterIntent);
                             break;
                         case "Calorie Calculator":
                             // Start CalorieCalculatorActivity
-                            Intent calorieCalculatorIntent = new Intent(context, CalorieCalculator.class);
+                            Intent calorieCalculatorIntent = new Intent(context, CalorieCalculatorActivity.class);
                             context.startActivity(calorieCalculatorIntent);
                             break;
                     }
@@ -64,10 +70,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         return mainMenuModels.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView menuImages;
         TextView menuNames;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 

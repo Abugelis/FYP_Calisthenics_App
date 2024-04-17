@@ -1,8 +1,7 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.stepcounter.activities;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +9,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -22,9 +20,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fypcalisthenicsapp.resetreceiver.MidnightResetReceiver;
+import com.example.fypcalisthenicsapp.R;
+
 import java.util.Calendar;
 
-public class StepsCounter extends AppCompatActivity implements SensorEventListener {
+public class StepCounterActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager mySensorManager = null;
     private Sensor stepSensor;
@@ -150,7 +151,7 @@ public class StepsCounter extends AppCompatActivity implements SensorEventListen
         steps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(StepsCounter.this, "Long press to reset steps", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StepCounterActivity.this, "Long press to reset steps", Toast.LENGTH_SHORT).show();
             }
         });
 

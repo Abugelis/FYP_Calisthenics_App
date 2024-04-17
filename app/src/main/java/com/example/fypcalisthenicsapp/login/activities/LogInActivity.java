@@ -1,4 +1,4 @@
-package com.example.fyp_calisthenics_app;
+package com.example.fypcalisthenicsapp.login.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.fypcalisthenicsapp.main.activities.MainMenuActivity;
+import com.example.fypcalisthenicsapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -33,7 +35,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class LogIn extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     private EditText email, password;
     private TextView signUp;
@@ -45,31 +47,30 @@ public class LogIn extends AppCompatActivity {
     // Google sign in ----------------------------------------------------------------------------------------------------------------------
     private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-        @Override
-        public void onActivityResult(ActivityResult result) {
-            if(result.getResultCode() == RESULT_OK){
-                Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
-                try {
-                    GoogleSignInAccount signInAccount = accountTask.getResult(ApiException.class);
-                    AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAccount.getIdToken(), null);
-                    auth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                auth = FirebaseAuth.getInstance();
-                                Toast.makeText(LogIn.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                Toast.makeText(LogIn.this, "Sign in failed" + task.getException(), Toast.LENGTH_SHORT).show();
-                            }
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                        try {
+                            GoogleSignInAccount signInAccount = accountTask.getResult(ApiException.class);
+                            AuthCredential authCredential = GoogleAuthProvider.getCredential(signInAccount.getIdToken(), null);
+                            auth.signInWithCredential(authCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        auth = FirebaseAuth.getInstance();
+                                        Toast.makeText(LogInActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(LogInActivity.this, "Sign in failed" + task.getException(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        } catch (ApiException e) {
+                            e.printStackTrace();
                         }
-                    });
-                } catch (ApiException e) {
-                    e.printStackTrace();
+                    }
                 }
-            }
-        }
-    });
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +89,13 @@ public class LogIn extends AppCompatActivity {
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.client_id)).requestEmail().build();
 
-        googleSignInClient = GoogleSignIn.getClient(LogIn.this, options);
+        googleSignInClient = GoogleSignIn.getClient(LogInActivity.this, options);
 
         // Sign Up clickable text clickListener
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LogIn.this, SignUp.class));
+                startActivity(new Intent(LogInActivity.this, SignUpActivity.class));
             }
         });
 
@@ -116,8 +117,8 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = googleSignInClient.getSignInIntent();
                 activityResultLauncher.launch(intent);
-                Toast.makeText(LogIn.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LogIn.this, MainMenu.class));
+                Toast.makeText(LogInActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LogInActivity.this, MainMenuActivity.class));
             }
         });
 
@@ -135,14 +136,14 @@ public class LogIn extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LogIn.this, MainMenu.class));
+                        Toast.makeText(LogInActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LogInActivity.this, MainMenuActivity.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LogIn.this, "Login Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LogInActivity.this, "Login Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }
