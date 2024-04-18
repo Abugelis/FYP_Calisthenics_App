@@ -56,4 +56,17 @@
         <item>Extra active/physically demanding work</item>
     </string-array>
 
+    <!-- Calorie Calculator Results activity strings -->
+    <string name="calorie_calculator_results_title">Calorie Calculator</string>
+    <string name="calorie_calculator_results_label">Results</string>
+    <string name="calorie_calculator_results_weight_gain">Weight gain</string>
+    <string name="calorie_calculator_results_weight_mid_gain">Mid weight gain</string>
+    <string name="calorie_calculator_results_weight_maintain">Maintain weight</string>
+    <string name="calorie_calculator_results_weight_mid_loss">Mid weight loss</string>
+    <string name="calorie_calculator_results_weight_loss">Weight loss</string>
+    <string name="calorie_calculator_results_quarter">0.25 kg/week</string>
+    <string name="calorie_calculator_results_half">0.5 kg/week</string>
+    <string name="calorie_calculator_results_daily_calories">calories/day</string>
+    <string name="calorie_calculator_results_warning">Before committing to any weight loss/gain plan, please consult with a medical professional</string>
+
 </resources>

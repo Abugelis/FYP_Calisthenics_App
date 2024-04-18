@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FYP_Calisthenics_App"
         tools:targetApi="31">
         <activity
+            android:name=".caloriecalculator.activities.CalorieCalculatorResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".caloriecalculator.activities.CalorieCalculatorActivity"
             android:exported="false" />
         <activity

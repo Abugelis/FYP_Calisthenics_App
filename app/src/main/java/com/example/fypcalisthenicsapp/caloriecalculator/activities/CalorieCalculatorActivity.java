@@ -1,5 +1,6 @@
 package com.example.fypcalisthenicsapp.caloriecalculator.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,8 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fypcalisthenicsapp.R;
-
-import java.text.DecimalFormat;
 
 public class CalorieCalculatorActivity extends AppCompatActivity {
 
@@ -46,6 +45,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
 
     private void calculateCalories() {
         double age, height, weight;
+        double totalCalories = 0;
         try {
             age = Double.parseDouble(ageEditText.getText().toString());
             height = Double.parseDouble(heightEditText.getText().toString());
@@ -81,14 +81,27 @@ public class CalorieCalculatorActivity extends AppCompatActivity {
             }
 
             // Calculate total calories burned
-            double totalCalories = bmr * activityPoints;
+            totalCalories = bmr * activityPoints;
 
-            // Display the result
-            DecimalFormat df = new DecimalFormat("#.##");
-            String result = "Total calories burned per day: " + df.format(totalCalories);
-            Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Please enter valid values for age, height, and weight", Toast.LENGTH_SHORT).show();
         }
+        // Calculate different scenarios
+        double weightGain = totalCalories * 1.2; // 120% of total calories
+        double midWeightGain = totalCalories * 1.1; // 110% of total calories
+        double maintainWeight = totalCalories; // Original total calories
+        double midWeightLoss = totalCalories * 0.9; // 90% of total calories
+        double weightLoss = totalCalories * 0.8; // 80% of total calories
+
+        // Prepare intent to pass data to CalorieCalculatorResults activity
+        Intent intent = new Intent(this, CalorieCalculatorResultsActivity.class);
+        intent.putExtra("WeightGain", weightGain);
+        intent.putExtra("MidWeightGain", midWeightGain);
+        intent.putExtra("MaintainWeight", maintainWeight);
+        intent.putExtra("MidWeightLoss", midWeightLoss);
+        intent.putExtra("WeightLoss", weightLoss);
+        startActivity(intent);
+
     }
 }
