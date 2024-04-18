@@ -3,11 +3,11 @@
     <style name="Base.Theme.FYP_Calisthenics_App" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
-        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/dark_grey</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/grey</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/dark_grey</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

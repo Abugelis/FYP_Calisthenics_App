@@ -51,35 +51,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.426" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:text="Male"
-        android:textColor="#ACACAC"
-        android:textSize="20sp"
 
+    <RadioGroup
+        android:id="@+id/gender_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
+        app:layout_constraintVertical_bias="0.334">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="126dp"
-        android:layout_height="49dp"
-        android:text="Female"
-        android:textColor="#ACACAC"
-        android:textSize="20sp"
-        android:buttonTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:buttonTint="@color/white"
+            android:checked="false"
+            android:text="Male"
+            android:textColor="#ACACAC"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="126dp"
+            android:layout_height="49dp"
+            android:layout_below="@id/radioButton"
+            android:text="Female"
+            android:textColor="#ACACAC"
+            android:textSize="20sp" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/calorie_calculator_weight"
