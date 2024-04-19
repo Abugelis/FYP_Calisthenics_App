@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FYP_Calisthenics_App"
         tools:targetApi="31">
         <activity
+            android:name=".waterintake.WaterIntakeActivity"
+            android:exported="false" />
+        <activity
             android:name=".caloriecalculator.activities.CalorieCalculatorResultsActivity"
             android:exported="false" />
         <activity
@@ -36,7 +39,7 @@
             android:name=".login.activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".login.activities.SignInActivity"
+            android:name=".login.activities.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

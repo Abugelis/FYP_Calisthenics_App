@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.fypcalisthenicsapp.R;
 
 // sita irgi pavadinima pakeisti gal main
-public class SignInActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     private Button login;
     private Button signup;
@@ -26,14 +26,14 @@ public class SignInActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignInActivity.this, LogInActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, LogInActivity.class));
             }
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, SignUpActivity.class));
             }
         });
     }

@@ -2,6 +2,7 @@
     <!--Client Id for google log in service -->
     <string name="client_id">412886323614-mini7i9vi47itr443f1km2c7r0odf5ue.apps.googleusercontent.com</string>
 
+    <!-- Application Name string -->
     <string name="app_name">FYP_Calisthenics_App</string>
 
     <!-- Welcome Activity Strings -->
@@ -15,7 +16,7 @@
     <string name="sign_up_password_hint">Password</string>
     <string name="sign_up_button">Sign Up</string>
 
-    <!-- Log In activity -->
+    <!-- Log In activity strings -->
     <string name="log_in_label">Calisthenics Mobile App</string>
     <string name="log_in_email">Email</string>
     <string name="log_in_password">Password</string>
@@ -68,5 +69,8 @@
     <string name="calorie_calculator_results_half">0.5 kg/week</string>
     <string name="calorie_calculator_results_daily_calories">calories/day</string>
     <string name="calorie_calculator_results_warning">Before committing to any weight loss/gain plan, please consult with a medical professional</string>
+
+    <!-- Water Intake activity strings -->
+
 
 </resources>
