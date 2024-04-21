@@ -71,6 +71,11 @@
     <string name="calorie_calculator_results_warning">Before committing to any weight loss/gain plan, please consult with a medical professional</string>
 
     <!-- Water Intake activity strings -->
+    <string name="water_intake_title">Water Intake</string>
+    <string name="water_intake_number_picker_prefix">Select amount: </string>
+    <string name="water_intake_info">A recommended average daily water intake is around 8 – 10 glasses
+    of water.You should drink more when working out and if it is hot outside. Assuming a glass of
+    water is 200ml.</string>
 
 
 </resources>

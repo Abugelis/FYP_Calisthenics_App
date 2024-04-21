@@ -15,6 +15,7 @@ import com.example.fypcalisthenicsapp.R;
 import com.example.fypcalisthenicsapp.caloriecalculator.activities.CalorieCalculatorActivity;
 import com.example.fypcalisthenicsapp.main.models.MainMenuModel;
 import com.example.fypcalisthenicsapp.stepcounter.activities.StepCounterActivity;
+import com.example.fypcalisthenicsapp.waterintake.WaterIntakeActivity;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,11 @@ public class MainRecyclerView extends RecyclerView.Adapter<MainRecyclerView.MyVi
                             // Start CalorieCalculatorActivity
                             Intent calorieCalculatorIntent = new Intent(context, CalorieCalculatorActivity.class);
                             context.startActivity(calorieCalculatorIntent);
+                            break;
+                        case "Water Intake":
+                            // Start WaterIntakeActivity
+                            Intent waterIntakeIntent = new Intent(context, WaterIntakeActivity.class);
+                            context.startActivity(waterIntakeIntent);
                             break;
                     }
                 }
