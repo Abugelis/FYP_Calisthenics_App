@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FYP_Calisthenics_App"
         tools:targetApi="31">
         <activity
+            android:name=".workout.activities.WorkoutMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".waterintake.WaterIntakeActivity"
             android:exported="false" />
         <activity

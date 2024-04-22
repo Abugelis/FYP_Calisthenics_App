@@ -77,5 +77,8 @@
     of water.You should drink more when working out and if it is hot outside. Assuming a glass of
     water is 200ml.</string>
 
+    <!-- Workout Activities strings -->
+    <string name="workout_menu_title">Workout</string>
+
 
 </resources>

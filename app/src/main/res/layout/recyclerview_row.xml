@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="175dp"
+    android:layout_height="184dp"
     android:orientation="horizontal"
     android:padding="10dp"
     android:clickable="true">
-
+    <!-- original 175 image size -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
